@@ -19,6 +19,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
+  perspective: 1500px;
 }
 
 .screen {
@@ -26,7 +27,7 @@ body {
   width: 100%;
   flex: 1;
   width: 100%;
-  transition: all 0.3s ease-out;
+  transition: all 0.4s ease 0s;
   position: absolute;
   height: 100vh;
   right: 0;
@@ -37,10 +38,11 @@ body {
 }
 
 .screen-open {
-  transform: scale(0.6);
-  position: absolute;
+  transform: scale(0.6) rotateY(-20deg);
+  transform-style: preserve-3d;
   right: -30%;
   opacity: 0;
+  overflow: hidden;
 }
 
 .previews {
@@ -56,9 +58,10 @@ body {
   width: 100%;
   background: #333;
   color: white;
-  opacity: 0;
-  transition: all 0.3s ease-out;
+  opacity: 1;
+  transition: all 0.4s ease 0s;
   right: 0;
+  transform: scale(1) rotateY(0);
 }
 
 .nav {
@@ -85,15 +88,16 @@ body {
 }
 
 .preview-open {
-  opacity: 1;
-  transform: scale(0.6);
-  position: absolute;
+  transform: scale(0.6) rotateY(-20deg);
+  transform-style: preserve-3d;
   right: -30%;
+  opacity: 1;
+  overflow: hidden;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .container-inner {
-  transition: all 0.3s ease-out;
+  transition: all 0.4s ease 0s;
   opacity: 0;
   flex: 1;
   display: flex;
