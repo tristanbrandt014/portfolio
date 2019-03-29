@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import 'normalize.css';
 import * as React from 'react';
 import './App.css';
-
+import bg from './assets/video/background.mp4';
 interface IState {
   screenOpen: boolean;
 }
@@ -40,6 +40,9 @@ class App extends React.Component<{}, IState> {
         )}
       >
         <div className="container-inner">
+          <video className="bg-video" autoPlay={true} muted={true} loop={true}>
+            <source src={bg} type="video/mp4" />
+          </video>
           <div className="controls">
             <div style={{ color: 'black' }} onClick={this.toggleScreen}>
               X

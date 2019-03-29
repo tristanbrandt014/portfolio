@@ -20,10 +20,11 @@ body {
   display: flex;
   flex-direction: column;
   perspective: 1500px;
+  overflow-x: hidden;
 }
 
 .screen {
-  background: #333;
+  background: white;
   width: 100%;
   flex: 1;
   width: 100%;
@@ -33,12 +34,12 @@ body {
   right: 0;
   top: 0;
   opacity: 1;
-  color: white;
+  color: #333;
   overflow: auto;
 }
 
 .screen-open {
-  transform: scale(0.6) rotateY(-20deg);
+  transform: scale(0.6);
   transform-style: preserve-3d;
   right: -30%;
   opacity: 0;
@@ -48,7 +49,6 @@ body {
 .previews {
   position: absolute;
   width: 100%;
-  background: #333;
   top: 0;
 }
 
@@ -56,12 +56,11 @@ body {
   position: absolute;
   height: 100vh;
   width: 100%;
-  background: #333;
-  color: white;
   opacity: 1;
   transition: all 0.4s ease 0s;
   right: 0;
-  transform: scale(1) rotateY(0);
+  transform: scale(1);
+  background: #fff;
 }
 
 .nav {
@@ -83,12 +82,12 @@ body {
 .item {
   padding: 20px;
   font-size: 40px;
-  color: #333;
+  color: #fff;
   font-weight: lighter;
 }
 
 .preview-open {
-  transform: scale(0.6) rotateY(-20deg);
+  transform: scale(0.6);
   transform-style: preserve-3d;
   right: -30%;
   opacity: 1;
@@ -102,8 +101,16 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  position: relative;
 }
 
 .container-open .container-inner {
   opacity: 1;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  z-index: -1;
 }
